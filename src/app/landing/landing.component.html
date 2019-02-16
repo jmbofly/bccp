@@ -1,0 +1,150 @@
+<div class="vertical-rythm-spacer"></div>
+<section class="panel">
+  <h1 class="section-title">{{ title }}</h1>
+  <div class="container">
+    <app-bccp-slider [slideLibrary]="heroSlides" [style.width]="'100%'" [sliderType]="'img'">
+    </app-bccp-slider>
+  </div>
+</section>
+<!-- #### -->
+<!-- #### -->
+<!-- #### -->
+<div class="vertical-rythm-spacer border-bottom thin accent"></div>
+<!-- #### -->
+<!-- #### -->
+<!-- #### -->
+<section class="panel">
+  <h1 class="section-title">About</h1>
+  <div class="section-overlay border-angle-top"></div>
+  <div class="container">
+    <div class="mini-card-grid" fxLayout="row wrap">
+      <div class="mini-card-item" *ngFor="let tile of heroSlides;let ev = even;" fxflex.md="50" fxflex.sm="100" fxflex.xs="100">
+        <mat-card class="mini-card mat-elevation-z2">
+          <mat-card-header>
+            <mat-card-title>Title</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image [src]="tile.img" alt="">
+          <!-- <mat-card-content>
+            Here is some card text
+          </mat-card-content> -->
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="vertical-rythm-spacer"></div>
+<!-- #region start landing-featured-products -->
+<!-- #### -->
+<!-- #### -->
+<!-- #### -->
+<!-- <section class="panel">
+  <h1 class="section-title">NewsLetter</h1>
+  <div class="container container-fluid">
+    <div class="container-fluid-inner">
+      <mat-card class="fluid-card">
+        <mat-card-header>
+          <mat-card-title>Get the hottest deals, and the sharpest tips</mat-card-title>
+          <mat-card-subtitle>Signup for our monthly newsletter.</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <form name="newsletterSignup">
+            <mat-form-field appearance="fill"><input matInput #newsletter name="email" type="email" placeholder="Enter email ex: you@email.com" /></mat-form-field>
+          </form>
+        </mat-card-content>
+        <mat-card-actions color="accent" align="end">
+          <button mat-fab color="primary">
+            <mat-icon>check_mark</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</section> -->
+<!-- <div class="vertical-rythm-spacer thick border-top"></div>
+<section class="panel light">
+  <h1 class="section-title">Featured Products</h1>
+  <div class="container container-fluid">
+    <div class="container-fluid-inner">
+      <mat-card class="fluid-card mat-elevation-z2">
+        <mat-card-content>
+          <mat-grid-list cols="3" rowHeight="fit" [style.height]="'300px'" [gutterSize]="'16px'">
+            <mat-grid-tile *ngFor="let tile of heroSlides" [colspan]="1" [rowspan]="1">
+              <mat-card class="mini-card">
+                <mat-card-title>Mini Title</mat-card-title>
+                <mat-card-subtitle>Mini Subtitle</mat-card-subtitle>
+                <img style="border-radius: 16px;" [src]="tile.img" alt="" />
+                <div class="section-overlay background"></div>
+                <mat-card-actions>
+                  <button mat-raised-button>
+                    Balance <mat-icon>account_balance</mat-icon>
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+              <div class="vertical-rythm-spacer thin border-bottom"></div>
+              <mat-grid-tile-footer>
+                <mat-icon mat-grid-avatar>info</mat-icon>
+                <mat-action-row class="hanging-actions">
+                  <button mat-fab class="large">
+                    <mat-icon class="large">shopping_basket</mat-icon>
+                  </button>
+                </mat-action-row>
+              </mat-grid-tile-footer>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button>
+            Stroked
+          </button>
+          <button mat-flat-button>
+            Flat
+          </button>
+          <button mat-raised-button>
+            Raised
+          </button>
+          <button mat-button>
+            Button
+          </button>
+          <a href="" mat-button>Link</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</section> -->
+<!-- <div class="vertical-rythm-spacer"></div>
+<section class="panel">
+  <h1 class="section-title">Custom Services</h1>
+  <div class="container">
+    <mat-grid-list cols="3" rowHeight="fit" [style.height]="(isHandset$ | async) ? '680px':'220px'" [gutterSize]="'4px'">
+      <mat-grid-tile *ngFor="let tile of heroSlides" [colspan]="(isHandset$ | async) ? '3':'1'">
+        <mat-card class="mini-card mat-elevation-z2">
+          <img mat-card-image [src]="tile.img" alt="" />
+        </mat-card>
+          <mat-grid-tile-footer>
+            <mat-icon mat-grid-avatar>more_vert</mat-icon>
+            <mat-action-row>
+              <button mat-fab>
+                <mat-icon>{{tile.icon}}</mat-icon>
+              </button>
+            </mat-action-row>
+          </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-toolbar>
+      <button mat-stroked-button>
+        Stroked
+      </button>
+      <button mat-flat-button>
+        Flat
+      </button>
+      <button mat-raised-button>
+        Raised
+      </button>
+      <button mat-button>
+        Button
+      </button>
+      <a href="" mat-button>Link</a>
+    </mat-toolbar>
+  </div>
+</section>
+<div class="vertical-rythm-spacer thick border-top"></div> -->

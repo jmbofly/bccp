@@ -1,0 +1,20 @@
+<mat-card class="slider-container class=" mat-elevation-z4>
+  <ngx-slick-carousel
+    fxFlexFill
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="sliderConfig"
+    (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)"
+    (afterChange)="afterChange($event)"
+    (beforeChange)="beforeChange($event)"
+  >
+    <div ngxSlickItem *ngFor="let slide of slideLibrary" class="slide">
+      <img *ngIf="slide.img" class="slide-img" src="{{ slide.img }}" alt="" width="100%" />
+    </div>
+  </ngx-slick-carousel>
+</mat-card>
+<!-- <button (click)="addSlide()" mat-stroked-button>Add</button>
+<button (click)="removeSlide()" mat-stroked-button>Remove</button>
+<button (click)="slickModal.slickGoTo(2)" mat-stroked-button>slickGoto 2</button>
+<button (click)="slickModal.unslick()" mat-stroked-button>unslick</button> -->

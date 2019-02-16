@@ -1,0 +1,54 @@
+/*
+* @Author: jmbofly
+* @Date:   2019-02-13 23:59:51
+* @Last Modified by:   jmbofly
+* @Last Modified time: 2019-02-14 00:06:41
+*/
+.text-center {
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.text-left {
+  text-align: left;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.text-right {
+  text-align: right;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.vertical-rythm-spacer {
+  height: 64px;
+  margin: 0 32px;
+  padding: 0;
+  border: none;
+
+  &.accent {
+    border-color: #303030;
+  }
+
+  &.thin {
+    border-width: 0.75px;
+  }
+
+  &.thick {
+    border-width: 4px;
+  }
+
+  &.border-top {
+    border-top: 1px solid #ffff00;
+  }
+
+  &.border-bottom {
+    border-bottom: 1px solid #ffff00;
+  }
+}
+

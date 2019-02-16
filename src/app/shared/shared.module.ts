@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material.module';
-import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
+import { BccpSliderComponent } from './bccp-slider/bccp-slider.component';
+import { BccpHoverDirective } from './bccp-hover.directive';
 
 @NgModule({
-  declarations: [AuthDialogComponent],
-  imports: [CommonModule, MaterialModule],
-  exports: [CommonModule, MaterialModule, AuthDialogComponent],
-  entryComponents: [AuthDialogComponent],
+  declarations: [BccpSliderComponent, BccpHoverDirective],
+  imports: [CommonModule, MaterialModule, SlickCarouselModule],
+  exports: [CommonModule, MaterialModule, BccpSliderComponent],
+  entryComponents: [BccpSliderComponent],
 })
 export class SharedModule {}

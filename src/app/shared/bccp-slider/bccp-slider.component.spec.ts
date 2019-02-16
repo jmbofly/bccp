@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthDialogComponent } from './auth-dialog.component';
+import { BccpSliderComponent } from './bccp-slider.component';
 
-describe('AuthDialogComponent', () => {
-  let component: AuthDialogComponent;
-  let fixture: ComponentFixture<AuthDialogComponent>;
+describe('BccpSliderComponent', () => {
+  let component: BccpSliderComponent;
+  let fixture: ComponentFixture<BccpSliderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthDialogComponent ]
+      declarations: [ BccpSliderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AuthDialogComponent);
+    fixture = TestBed.createComponent(BccpSliderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

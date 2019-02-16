@@ -2,40 +2,56 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {
-    "bccp": {
+  "projects":
+  {
+    "bccp":
+    {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
-      "architect": {
-        "build": {
+      "schematics":
+      {
+        "@schematics/angular:component":
+        {
+          "styleext": "scss"
+        }
+      },
+      "architect":
+      {
+        "build":
+        {
           "builder": "@angular-devkit/build-angular:browser",
-          "options": {
+          "options":
+          {
             "outputPath": "dist/bccp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles.css"
+              "node_modules/animate.css/animate.css",
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss",
+              "node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "src/styles/styles.scss",
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
+            ],
             "es5BrowserSupport": true
           },
-          "configurations": {
-            "production": {
+          "configurations":
+          {
+            "production":
+            {
               "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              {
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -46,87 +62,95 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
-        "serve": {
+        "serve":
+        {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
+          "options":
+          {
             "browserTarget": "bccp:build"
           },
-          "configurations": {
-            "production": {
+          "configurations":
+          {
+            "production":
+            {
               "browserTarget": "bccp:build:production"
             }
           }
         },
-        "extract-i18n": {
+        "extract-i18n":
+        {
           "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
+          "options":
+          {
             "browserTarget": "bccp:build"
           }
         },
-        "test": {
+        "test":
+        {
           "builder": "@angular-devkit/build-angular:karma",
-          "options": {
+          "options":
+          {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
+            "assets": ["src/favicon.ico", "src/assets"]
           }
         },
-        "lint": {
+        "lint":
+        {
           "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+          "options":
+          {
+            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "bccp-e2e": {
+    "bccp-e2e":
+    {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
-      "architect": {
-        "e2e": {
+      "architect":
+      {
+        "e2e":
+        {
           "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
+          "options":
+          {
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "bccp:serve"
           },
-          "configurations": {
-            "production": {
+          "configurations":
+          {
+            "production":
+            {
               "devServerTarget": "bccp:serve:production"
             }
           }
         },
-        "lint": {
+        "lint":
+        {
           "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
+          "options":
+          {
             "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

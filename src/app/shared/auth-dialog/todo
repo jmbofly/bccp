@@ -1,6 +1,0 @@
-UI:
-  ☐ Create buttons to open auth-dialogs (login and register)
-  ☐ @low Create method to dynamically check window size and position dialog accordingly
-  Form:
-    ☐ Create Submit method for dialog output
-

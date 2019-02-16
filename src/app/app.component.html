@@ -1,21 +1,83 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="mat-elevation-z8" style="width: 100%;">
+  <mat-toolbar>
+    <span class="header-top">Brakes | Steering | Suspension</span>
+  </mat-toolbar>
+  <mat-toolbar class="header-mid">
+    <div class="gradient-overlay">
+      <span>
+        <a href="/">
+          <img
+            src="../assets/images/logo/logo.jpg"
+            alt="BCCP | Bens Classic Cars Logo"
+            class="logo-img text-center"
+          />
+        </a>
+      </span>
+      <span style="width: 100%;"></span>
+      <span>
+        <button mat-icon-button class="mat-elevation-z4">
+          <mat-icon class="material-icons">account_circle</mat-icon>
+        </button>
+        <button mat-icon-button class="mat-elevation-z4">
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+      </span>
+    </div>
+  </mat-toolbar>
+  <mat-toolbar class="app-bccp-menu">
+    <button mat-icon-button (click)="sidenav.toggle()" fxShow.md="false" fxShow.lg="false" fxShow.sm="false" fxShow="true"><mat-icon>menu</mat-icon></button>
+    <nav class="menu-nav" style="text-align: center;" fxShow.xs="false" fxShow="true">
+      <a href="/" mat-button>Home</a>
+      <a href="/shop" mat-button>Shop</a>
+      <button mat-button
+      [matMenuTriggerFor]="categoriesMenu"
+      (mouseover)="toggleCatMenu($event, 'openMenu')"
+      (click)="toggleCatMenu($event, 'toggleMenu')"
+      >
+        CATEGORIES
+      </button>
+      <a href="" mat-button>About</a>
+      <a href="" mat-button>Contact</a>
+      <a href="" mat-button>Faq</a>
+    </nav>
+    <mat-menu #categoriesMenu="matMenu" [overlapTrigger]="false" class="nav-dropdown-menu categories">
+      <button mat-menu-item *ngFor="let area of navAreas" (click)="navigateTo(area.url, { relativeTo: route })">
+        {{ area.area }}
+      </button>
+    </mat-menu>
+    <span class="nav-button-container">
+      <button
+        mat-icon-button
+        class="nav-search-button scale animated faster mat-elevation-z2"
+        (click)="search(searchBox.value)"
+        [ngClass]="(searchOpen$ | async) ? 'fadeInRight' : 'fadeOutRight'"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="nav-search-button mat-elevation-z1"
+        (click)="toggleSearchBox()"
+      >
+        <mat-icon
+          class="animated faster"
+          [ngClass]="(searchOpen$ | async) ? 'rotateIn' : 'rotateIn'"
+          >{{ (searchOpen$ | async) ? 'close' : 'search' }}</mat-icon
+        >
+      </button>
+    </span>
+  </mat-toolbar>
+  <div class="search-box animated faster" [ngClass]="(searchOpen$ | async) ? 'fadeInUp' : 'fadeOutDown'">
+    <input type="text" #searchBox placeholder="Enter search" />
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" align="start" closed>
+    Sidenav content
+  </mat-sidenav>
+  <!-- Body -->
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <div class="section-overlay pattern stripes"></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

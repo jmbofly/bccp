@@ -1,0 +1,13 @@
+.mat-card.slider-container {
+  padding: 0;
+  border-radius: 16px;
+  width: 100%;
+  .carousel {
+    ::ng-deep .slide {
+      .slide-img {
+        max-height: 420px;
+        border-radius: 16px;
+      }
+    }
+  }
+}

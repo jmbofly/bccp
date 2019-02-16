@@ -1,0 +1,33 @@
+/*
+* @Author: jmbofly
+* @Date:   2019-02-14 00:03:20
+* @Last Modified by:   jmbofly
+* @Last Modified time: 2019-02-14 00:03:32
+*/
+/* Animation timings to be used with Animate.css */
+.timing {
+  &.t-250 {
+    -webkit-animation-duration: 0.25s;
+    animation-duration: 0.25s;
+  }
+
+  &.t-300 {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+  }
+
+  &.t-500 {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+  }
+
+  &.t-600 {
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+  }
+
+  &.t-750 {
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+  }
+}
